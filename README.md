@@ -1,5 +1,3 @@
-# AgriWorkforceSurvey
-
 About survey: 
 ---
 Exploring the causes of labor shortage in Taiwan

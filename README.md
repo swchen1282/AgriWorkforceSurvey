@@ -1,3 +1,3 @@
 # AgriWorkforceSurvey
 
-![image](https://github.com/travishen/AgriWorkforceSurvey/tree/master/img/page.PNG)
+![image](https://github.com/travishen/AgriWorkforceSurvey/blob/master/img/page.PNG?raw=true)

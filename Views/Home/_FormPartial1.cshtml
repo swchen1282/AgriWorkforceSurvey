@@ -1,0 +1,241 @@
+﻿<div class="container">
+    <div class="alert alert-danger" id="Alert00" role="alert" style="display:none;"></div>
+    <form id="BaseFarmer">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label lead" data-source="BaseFarmer" for="farmerId">農戶編號</label>
+            <div class="col-sm-4">
+                <p class="form-control-static lead" id="farmerId"></p>
+            </div>
+            <label class="col-sm-1 col-form-label lead" for="phone">電話</label>
+            <div class="col-sm-5 float-label-control">
+                <input type="text" class="form-control lead" data-source="BaseFarmer" id="phone">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <h3 class="dark-grey">一、農業經營型態</h3>
+    <div class="alert alert-info" id="Alert20" role="alert" style="display:none;"></div>
+    <div class="alert alert-danger" id="Alert01" role="alert" style="display:none;"></div>
+    <table class="table table-bordered table-hover ">
+        <tbody>
+            <tr>
+                <th>
+                    <h4>1.1 貴戶從事農牧業經營年數</h4>
+                </th>
+                <td id="ExperienceYears">
+                    <div class="form-check col-md-4">
+                        <div class="checkbox">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="ExperienceYearsId" data-source="ExperienceYears" data-experienceYearsId="1">
+                                1.未滿一年
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-check col-md-4">
+                        <div class="checkbox">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="ExperienceYearsId" data-source="ExperienceYears" data-experienceYearsId="2">
+                                2.一～未滿五年
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-check col-md-4">
+                        <div class="checkbox">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="ExperienceYearsId" data-source="ExperienceYears" data-experienceYearsId="3">
+                                3.五年以上
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <div>
+                        <h4>1.2 貴戶是否兼營農業相關事業</h4>                    
+                    </div>
+                    <small class="form-text text-muted">註：所經營相關事業之原材物料須運用自家初級農業產品或運用自有農業生產設施備者</small>
+                </th>
+                <td id="Business">
+                    <div class="form-group col-md-12">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-source="Business" data-farmRelatedBusinessId="1" data-has-business="N">
+                                1.無兼營農業相關事業
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <div>
+                            <label>
+                                有兼營
+                                <small class="form-text text-muted">（可複選）</small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-source="Business" data-farmRelatedBusinessId="2" data-has-business="N">
+                                2.農產品加工
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-source="Business" data-farmRelatedBusinessId="3" data-has-business="Y">
+                                3.休閒農業
+                                <small class="form-text text-muted">(含休閒農場、觀光農園、農村民宿等)</small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-source="Business" data-farmRelatedBusinessId="4" data-has-business="Y">
+                                4.餐飲店
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3 col-md-offset-3">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-source="Business" data-farmRelatedBusinessId="5" data-has-business="N">
+                                5.自家農產品外銷
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-source="Business" data-farmRelatedBusinessId="6" data-has-business="N">
+                                6.販售門市
+                                <small class="form-text text-muted">(含零售、網售等)</small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" data-source="Business" data-farmRelatedBusinessId="7" data-has-business="N">
+                                7.其他
+                            </label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <h3 class="dark-grey">二、貴戶年底可從事農牧業生產之土地面積</h3>
+    <div class="alert alert-info" id="Alert16" role="alert" style="display:none;"></div>
+    <div class="alert alert-danger" id="Alert02" role="alert" style="display:none;"></div>
+    <table class="table table-bordered table-hover ">
+        <thead>
+            <tr>
+                <th style="width: 10%;">#</th>
+                <th>自有</br>①</th>
+                <th>租(借)出</br>② </th>
+                <th>租借占用</br>③</th>
+                <th>接受委託經營</br>④</th>
+                <th>可耕作面積</br>① - ② + ③ + ④</th>
+            </tr>
+        </thead>
+        <tbody id="FarmerLandArea">
+            <tr class="table-active">
+                <th scope="row"></th>
+                <td><small>公畝</small></td>
+                <td><small>公畝</small></td>
+                <td><small>公畝</small></td>
+                <td><small>公畝</small></td>
+                <td><small>公畝</small></td>
+            </tr>
+            <tr>
+                <th scope="row">可耕作地</th>
+                <td data-farmerlandtypeid="1" data-farmerproductiontypeid="1"></td>
+                <td data-farmerlandtypeid="1" data-farmerproductiontypeid="2"></td>
+                <td data-farmerlandtypeid="1" data-farmerproductiontypeid="4"></td>
+                <td data-farmerlandtypeid="1" data-farmerproductiontypeid="5"></td>
+                <td data-farmerlandtypeid="1" data-farmerproductiontypeid="6"></td>
+            </tr>
+            <tr>
+                <th scope="row">人工舖面</th>
+                <td data-farmerlandtypeid="2" data-farmerproductiontypeid="1"></td>
+                <td data-farmerlandtypeid="2" data-farmerproductiontypeid="2"></td>
+                <td data-farmerlandtypeid="2" data-farmerproductiontypeid="4"></td>
+                <td data-farmerlandtypeid="2" data-farmerproductiontypeid="5"></td>
+                <td data-farmerlandtypeid="2" data-farmerproductiontypeid="6"></td>
+            </tr>
+            <tr>
+                <th scope="row">畜牧用地</th>
+                <td data-farmerlandtypeid="3" data-farmerproductiontypeid="1"></td>
+                <td data-farmerlandtypeid="3" data-farmerproductiontypeid="2"></td>
+                <td data-farmerlandtypeid="3" data-farmerproductiontypeid="4"></td>
+                <td data-farmerlandtypeid="3" data-farmerproductiontypeid="5"></td>
+                <td data-farmerlandtypeid="3" data-farmerproductiontypeid="6"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<div class="container">
+    <h3 class="dark-grey">三、農畜產品銷售及提供服務情形</h3>
+
+    <div class="col-md-6">
+        <h4 class="dark-grey">3.1 貴戶全年農作物銷售情形</h4>
+        <div class="alert alert-info" id="Alert17" role="alert" style="display:none;"></div>
+        <div class="alert alert-danger" id="Alert03" role="alert" style="display:none;"></div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>作物代碼 / 作物名稱</th>
+                    <th>占銷售額比例(%)</th>
+                    <th>農業設施種類(代號)</th>
+                    <th>刪除</th>
+                </tr>
+            </thead>
+            <tbody id="CropSituation"></tbody>
+        </table>
+        <!-- Button trigger modal -->
+        <button class="btn btn-block btn-sm btn-primary" id="btnAddCropSituation"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增一筆農產品銷售情形</button>
+    </div>
+    <div class="col-md-6">
+        <h4 class="dark-grey">3.2 貴戶全年畜禽銷售情形</h4>
+        <div class="alert alert-info" id="Alert18" role="alert" style="display:none;"></div>
+        <div class="alert alert-danger" id="Alert04" role="alert" style="display:none;"></div>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>畜禽代碼 / 畜禽（產品）名稱</th>
+                    <th>占銷售額比例(%)</th>
+                    <th>刪除</th>
+                </tr>
+            </thead>
+            <tbody id="AnimalMarketing"></tbody>
+        </table>
+        <!-- Button trigger modal -->
+        <button class="btn btn-block btn-sm btn-primary" id="btnAddAnimalMarketing"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增一筆畜禽產品銷售情形</button>
+    </div>
+</div>
+<div class="container">
+    <h4 class="dark-grey">
+        3.3 貴戶全年銷售額
+        <small class="form-text text-muted">（勾選銷售額區間）</small>
+    </h4>
+    <div class="alert alert-info" id="Alert15" role="alert" style="display:none;"></div>
+    <div class="alert alert-danger" id="Alert05" role="alert" style="display:none;"></div>    
+    <table class="table table-bordered table-hover" id="AllMarketing">
+        <thead>
+            <tr>
+                <th style="width: 20%;">全年收入（萬元）</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+

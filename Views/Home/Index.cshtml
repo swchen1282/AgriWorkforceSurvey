@@ -1,0 +1,207 @@
+﻿@{
+    ViewBag.Title = "查詢農戶";
+}
+
+@Html.Hidden("component", @ViewData["Component"])
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/editor.js?20171024")"></script>
+    <script src="@Url.Content("~/Scripts/index.js?20171016")"></script>
+    <link href="@Url.Content("~/Content/editor.css")" rel="stylesheet" type="text/css" />
+}
+<div class="row input-area">
+    <div class="col-md-12">
+        <div class="form-inline">
+            <input type="text" class="form-control input-lg" id="inputFarmerId" data-provide="typeahead" aria-describedby="輸入農戶編號" placeholder="請輸入農戶編號">
+            <button type="button" class="btn btn-primary btn-lg" id="btnSearch">查詢</button>
+            <button type="button" class="btn btn-success btn-lg" id="btnSearchReadOnly">查詢原始資料</button>
+        </div>
+    </div>
+
+</div>
+<section class="jumbotron index-info">
+    <div class="col-md-12">
+        <div class="row row-padded row-centered">
+            <div class="col-md-6">
+                <h2><span class="glyphicon glyphicon-globe"></span>105年農業結構及勞動力調查</h2>
+                <hr />
+                <p class="lead">
+                    <span class="glyphicon glyphicon-hand-up"></span>
+                    請於上方搜尋列輸入您要查詢的農戶編號，欲進行檢誤，請使用<span class="text-primary">查詢</span>按鈕；欲檢視原始調查表，請使用<span class="text-success">查詢原始資料</span>按鈕。完成檢誤後，請務必於調查表<span class="text-primary">第四頁</span>點擊<span class="text-success">更新調查表</span>。若有任何疑問，歡迎來電洽詢。
+                </p>
+                <hr />
+                <p class="lead">
+                    <span class="glyphicon glyphicon-hand-right"></span>系統提示範例如右圖。藍色區塊為<span class="text-primary">提醒</span>，表示無錯誤但須注意的事項；紅色區塊為<span class="text-danger">錯誤</span>，表示該表格應已違反相關檢誤條件。
+                </p>
+            </div>
+            <div class="col-md-6">
+                <img src="/img/info.png" width="100%" class="img-thumbnail" />
+            </div>
+        </div>
+        <div class="row row-centered row-padded">
+            <div class="col-md-12" style="margin-top:20px;">  
+                <p class="lead">
+                    <span class="glyphicon glyphicon-question-sign"></span>複審Q&A：
+                    <a href="#QA" class="btn btn-primary" role="button">調查表寄送相關問題</a>
+                    <a href="#QB" class="btn btn-primary" role="button">系統操作問題</a>
+                    <a href="#QC" class="btn btn-primary" role="button">審表相關問題</a>
+                </p>
+                <hr />        
+                <p class="lead">
+                    <span class="glyphicon glyphicon-cloud-download"></span>公務資料下載：
+                    <a href="/勞動力調查/宜蘭縣.xlsx" class="btn btn-success btn-sm" role="button">宜蘭縣</a>
+                    <a href="/勞動力調查/花蓮縣.xlsx" class="btn btn-success btn-sm" role="button">花蓮縣</a>
+                    <a href="/勞動力調查/南投縣.xlsx" class="btn btn-success btn-sm" role="button">南投縣</a>
+                    <a href="/勞動力調查/屏東縣.xlsx" class="btn btn-success btn-sm" role="button">屏東縣</a>
+                    <a href="/勞動力調查/苗栗縣.xlsx" class="btn btn-success btn-sm" role="button">苗栗縣</a>
+                    <a href="/勞動力調查/桃園市.xlsx" class="btn btn-success btn-sm" role="button">桃園市</a>
+                    <a href="/勞動力調查/高雄市.xlsx" class="btn btn-success btn-sm" role="button">高雄市</a>
+                    <a href="/勞動力調查/基隆市.xlsx" class="btn btn-success btn-sm" role="button">基隆市</a>
+                    <a href="/勞動力調查/雲林縣.xlsx" class="btn btn-success btn-sm" role="button">雲林縣</a>
+                    <a href="/勞動力調查/新北市.xlsx" class="btn btn-success btn-sm" role="button">新北市</a>
+                    <a href="/勞動力調查/新竹縣.xlsx" class="btn btn-success btn-sm" role="button">新竹縣</a>
+                    <a href="/勞動力調查/新竹市.xlsx" class="btn btn-success btn-sm" role="button">新竹市</a>
+                    <a href="/勞動力調查/嘉義市.xlsx" class="btn btn-success btn-sm" role="button">嘉義市</a>
+                    <a href="/勞動力調查/嘉義縣.xlsx" class="btn btn-success btn-sm" role="button">嘉義縣</a>
+                    <a href="/勞動力調查/彰化縣.xlsx" class="btn btn-success btn-sm" role="button">彰化縣</a>
+                    <a href="/勞動力調查/臺中市.xlsx" class="btn btn-success btn-sm" role="button">臺中市</a>
+                    <a href="/勞動力調查/臺北市.xlsx" class="btn btn-success btn-sm" role="button">臺北市</a>
+                    <a href="/勞動力調查/臺東縣.xlsx" class="btn btn-success btn-sm" role="button">臺東縣</a>
+                    <a href="/勞動力調查/臺南市.xlsx" class="btn btn-success btn-sm" role="button">臺南市</a>
+                </p>
+                <hr />
+                <p class="lead">
+                    <span class="glyphicon glyphicon-eye-open"></span>建議瀏覽器：
+                    <a href="https://www.google.com.tw/chrome/browser/desktop/index.html" target="_blank" class="btn btn-info" role="button">Chrome</a>
+                    <a href="https://www.mozilla.org/zh-TW/firefox/new" target="_blank" class="btn btn-info" role="button">FireFox</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="jumbotron index-info" id="QA">
+    <div class="col-md-12">
+        <div class="row row-padded row-centered">
+            <h2><span class="glyphicon glyphicon-question-sign"></span>調查表寄送相關問題</h2>
+            <hr />
+            <p style="font-weight:bold;">Q1：為什麼我在桃園市，卻只收到其他縣市的調查表？</p>
+            <p>由於北部縣市的調查戶數較少，所以不是每位都可以拿到所在縣市的調查表，會有南表北送的情形。</p>
+            <p style="font-weight:bold;">Q2：為什麼還沒有收到調查表？</p>
+            <p>由於各縣市回表時間不一，且部分縣市調查表交表有延宕的情形，故時間上有些拖延，預計本週（10/6前）每位複審員皆可收到調查表。</p>
+            <p style="font-weight:bold;">Q3：調查表需要交回嗎？</p>
+            <p>調查表影本不用交回，複審員可直接在上面註記，但由於涉及個資，待本次調查完全結束之後，請銷毀，謝謝。</p>
+        </div>
+    </div>
+</section>
+
+<section class="jumbotron index-info" id="QB">
+    <div class="col-md-12">
+        <div class="row row-padded row-centered">
+            <h2><span class="glyphicon glyphicon-question-sign"></span>系統操作問題</h2>
+            <hr />
+            <p style="font-weight:bold;">Q1：為什麼在「線上檢誤小幫手」網頁輸入農戶編號，卻查無農戶資料？</p>
+            <p>由於本次調查時間緊迫，因此複審員收到表與廠商登打是同步進行的，且登打需要作業時間，所以複審員通常可在收到調查表後的1-2天內即可進入系統開始檢誤。建議可以先用調查表影本及公務資料來審表，待系統匯入資料之後即可直接進去系統修改。</p>
+            <p style="font-weight:bold;">Q2：是不是檢誤系統只要出現紅色錯誤訊息，我就要更正？</p>
+            <p>請先確認農戶實際情形再更正！系統出現紅色區塊代表錯誤，表示該資料可能已違反相關檢誤條件。但如果因為該農戶有特殊情形，請不要為了消除紅色錯誤而擅自修改資料。若不確定的話，可以先聯絡統計室確認處理原則後再進行修改。</p>
+        </div>
+    </div>
+</section>
+
+<section class="jumbotron index-info" id="QC">
+    <div class="col-md-12">
+        <div class="row row-padded row-centered">
+            <h2><span class="glyphicon glyphicon-question-sign"></span>審表相關問題</h2>
+            <hr />
+            <p style="font-weight:bold;">Q1：如果調查表有錯誤應該如何修正？</p>
+            <p>1.如果是很明顯的錯誤（例如人數、比例加總、面積加總等），可以不用跟縣市初審員及公所調查員確認，直接在系統上更改。</p>
+
+            <p>2.由於公務資料主要為104年農林漁牧業普查資料，在假設該農戶在一年間變化不大的前提下，如調查表若與公務資料差異甚大（例如經營種類完全不同、經營面積、銷售額、戶內人口成員數及其生活型態差異很大），或農戶的面積、作物別及銷售額與僱工人數相對應之後不太合理，則請依照以下原則，確認資料後再更改。</p>
+            <ul>
+                <li>如該縣市調查表錯誤率高，請擇五～六份調查表掃描或傳真後，退回縣市初審員，請初審員與公所調查員確認後修改。</li>
+                <li>直接與公所調查員聯繫，確認農戶實際情形。</li>
+                <li>直接與農戶聯繫。</li>
+                <li>若調查表在確認之後發現錯誤很多，且非檢誤系統邏輯可判斷紀錄的，請在檢誤系統上第四頁附記欄註記─「與原調查表差異甚大」，以作為縣市考核的參考。</li>
+            </ul>
+
+            <p style="font-weight:bold;">Q2：某調查員幾乎都在同一個地方出現錯誤怎麼辦？</p>
+            <p>代表此位調查員可能觀念錯誤，請掃描或傳真幾份調查表給縣市初審員，請初審員與調查員確認。或是直接與公所調查員聯繫（通常公所調查員手上會留存調查表影本），以釐清觀念並進行修改。</p>
+
+            <p style="font-weight:bold;">Q3：戶內成員出生年次與公務資料上的出生年次不同需要與調查員或農戶確認嗎？</p>
+            <p>如調查表僅有出生年次有些微差異，其他部分無誤，可直接依照調查表所填資料為主；如調查表仍有其他錯誤，可與其他錯誤一併與調查員或農戶進行確認。</p>
+
+            <p style="font-weight:bold;">Q4：若因農戶經營規模不大，但有銷售事實，而全年從事自家農牧業工作日數不到30天，且戶內人口皆未填列(1)自營農牧業、(2)受僱農牧業、(3)受託提供農事及服務業任一項，是否為調查對象？</p>
+            <p><span class="glyphicon glyphicon-star"></span>先確認該農戶【3.3貴戶全年銷售額】是否有20萬以上：</p>
+            <ul>
+                <li>有20萬以上➜戶內人口應有一位勾選自營農牧業工作。例如：種植檳榔較為粗放，從事自家農牧業工作日數不須30天以上，農戶及其配偶主要時間是在檳榔攤，則依該戶農牧業工作主要成員勾選自營農牧業工作、其配偶則可勾選自營農牧業外工作</li>
+                <li>未滿20萬➜戶內人口生活型態照實填列，並在檢誤系統上第四頁附記欄註記「戶內人口未符合調查對象」。</li>
+            </ul>
+
+            <p style="font-weight:bold;">Q5：若農戶有自家農牧業工作、亦有受僱農牧業工作，【問項4.2】如何填列？</p>
+            <p>自營工作時間與受僱農牧業工作差不多➜自營優先於受僱➜「無」從事農牧業外工作。</p>
+
+            <p style="font-weight:bold;">Q6：噴藥工如何填列？</p>
+            <p>噴藥工若為自己帶機器來，視為農事服務業者，不需填列在僱工情形；但若噴藥工使用的為農戶自己的機器，則視為農戶僱用的技術工。另外，許多農事服務業者會以面積計價，也可以參考計價方式去判別是否為農事服務業者。</p>
+
+            <p style="font-weight:bold;">Q7：養牛畜牧戶有填列可耕作地及畜牧用地經營面積，但在【問項3.1】沒有填列牧草銷售情形可否直接填列？</p>
+            <p>畜牧戶有可耕作地面積，通常為種植牧草僅供牛食用，並沒有銷售。若確認有種植牧草，即可在【問項3.1】新增牧草，銷售額比例填「0」、【問項3.3】全年農產品銷售額區間勾選「未滿20萬元」。</p>
+
+            <p style="font-weight:bold;">Q8：僱用臨時或季節性員工超過六個月，沒有於附記欄註記怎麼辦？</p>
+            <p>請確認填列月份超過六個月的員工，是否為同一人。如有「同一人」，填列「超過六個月」，此人即為常僱員工。若此常僱員工在一個月內工作未滿20天，其月薪請不用填列，避免低估。</p>
+        </div>
+    </div>
+</section>
+<div class="editor-tabs" style="display:none;">
+    <input type="radio" id="tab1" name="tab-control" checked>
+    <input type="radio" id="tab2" name="tab-control">
+    <input type="radio" id="tab3" name="tab-control">
+    <input type="radio" id="tab4" name="tab-control">
+    <ul>
+        <li title="Page 1">
+            <label for="tab1" role="button">
+                <svg viewBox="0 0 286.054 286.054">
+                    <path d="M143.027,0C64.031,0,0,64.04,0,143.027c0,78.996,64.031,143.027,143.027,143.027 s143.027-64.031,143.027-143.027C286.054,64.04,222.022,0,143.027,0z M143.027,259.236c-64.183,0-116.209-52.026-116.209-116.209 S78.844,26.818,143.027,26.818s116.209,52.026,116.209,116.209S207.21,259.236,143.027,259.236z" />
+                    <path d="M150.026,80.39h-22.84c-6.91,0-10.933,7.044-10.933,13.158c0,5.936,3.209,13.158,10.933,13.158 h7.259v85.36c0,8.734,6.257,13.605,13.176,13.605s13.185-4.881,13.185-13.605V92.771C160.798,85.789,156.945,80.39,150.026,80.39z" />
+                </svg><br><span>第一頁</span>
+            </label>
+        </li>
+        <li title="Page 2">
+            <label for="tab2" role="button">
+                <svg viewBox="0 0 286.054 286.054">
+                    <path d="M143.027,0C64.031,0,0,64.04,0,143.027c0,78.996,64.031,143.027,143.027,143.027   s143.027-64.031,143.027-143.027C286.054,64.04,222.022,0,143.027,0z M143.027,259.236c-64.183,0-116.209-52.026-116.209-116.209   S78.844,26.818,143.027,26.818s116.209,52.026,116.209,116.209S207.21,259.236,143.027,259.236z M173.232,180.205h-32.038   c15.661-18.459,40.852-39.753,40.852-63.736c0-21.91-16.564-35.882-39.216-35.882c-22.661,0-43.847,17.977-43.847,39.717   c0,6.731,4.604,12.586,13.445,12.586c17.691,0,8.108-28.498,29.294-28.498c7.554,0,13.266,6.204,13.266,13.284   c0,6.204-3.138,11.558-6.454,16.046c-13.999,18.969-30.581,34.496-45.867,51.579c-1.841,2.065-4.246,5.176-4.246,8.796   c0,7.938,6.266,11.38,14.365,11.38h61.528c6.999,0,13.266-4.568,13.266-12.497C187.58,185.05,181.331,180.205,173.232,180.205z" />
+                </svg><br><span>第二頁</span>
+            </label>
+        </li>
+        <li title="Page 3">
+            <label for="tab3" role="button">
+                <svg viewBox="0 0 286.054 286.054">
+                    <path d="M143.027,0C64.04,0,0,64.04,0,143.027c0,78.996,64.04,143.027,143.027,143.027   s143.027-64.031,143.027-143.027C286.054,64.04,222.014,0,143.027,0z M143.027,259.236c-64.183,0-116.209-52.026-116.209-116.209   S78.844,26.818,143.027,26.818s116.209,52.026,116.209,116.209S207.21,259.236,143.027,259.236z M167.717,137.637   c8.966-5.936,13.364-15.277,13.364-25.977c0-13.239-11.254-31.082-34.729-31.082c-18.093,0-35.542,14.276-35.542,27.515   c0,6.284,3.915,12.56,10.602,12.56c11.085,0,8.966-16.636,24.449-16.636c7.339,0,11.737,4.925,11.737,11.371   c0,18.853-23.152,6.794-23.152,24.627c0,20.033,27.72,2.548,27.72,26.317c0,9.002-6.856,15.796-15.331,15.796   c-18.424,0-15.813-19.872-26.898-19.872c-5.873,0-12.551,4.756-12.551,11.38c0,13.418,15,31.922,39.127,31.922   c23.152,0,41.084-17.154,41.084-37.527C187.598,154.621,179.445,143.25,167.717,137.637z" />
+                </svg><br><span>第三頁</span>
+            </label>
+        </li>
+        <li title="Page 4">
+            <label for="tab4" role="button">
+                <svg viewBox="0 0 286.054 286.054">
+                    <path d="M143.027,0C64.04,0,0,64.04,0,143.027c0,78.996,64.04,143.027,143.027,143.027   s143.027-64.031,143.027-143.027C286.054,64.04,222.014,0,143.027,0z M143.027,259.236c-64.183,0-116.209-52.026-116.209-116.209   S78.844,26.818,143.027,26.818s116.209,52.026,116.209,116.209S207.21,259.236,143.027,259.236z M175.065,155.122h-5.042v-52.607   c0-15.59-8.394-21.937-18.933-21.937c-9.449,0-14.535,3.093-18.531,9.94l-40.7,69.565c-1.091,1.707-2.548,3.772-2.548,7.545   c0,4.452,3.817,10.11,12.72,10.11h43.793V192.3c0,9.091,1.85,13.364,11.12,13.364s13.078-4.282,13.078-13.364v-14.562h5.042   c7.089,0,12.72-4.452,12.72-11.317C187.785,159.573,182.154,155.122,175.065,155.122z M146.379,155.122h-24.896l24.529-47.816   h0.367V155.122z" />
+                </svg><br><span>第四頁</span>
+            </label>
+        </li>
+    </ul>
+
+    <div class="slider"><div class="indicator"></div></div>
+    <div class="content">
+        <section class="container">
+            @Html.Partial("_FormPartial1")
+        </section>
+        <section class="container">
+            @Html.Partial("_FormPartial2")
+        </section>
+        <section>
+
+            @Html.Partial("_FormPartial3")
+        </section>
+        <section>
+            @Html.Partial("_FormPartial4")
+        </section>
+    </div>
+</div>
+

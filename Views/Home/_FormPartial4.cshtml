@@ -1,0 +1,52 @@
+﻿<div class="jumbotron">
+    <h3 class="dark-grey">附記欄</h3>
+    <p>若調查表具任何特殊情形，請填寫註記欄。</p>
+    <textarea class="form-control" style="min-width:100%;" id="note" rows="5"></textarea>
+    <hr class="my-4">
+    @if (ViewBag.Title == "查詢農戶")
+    {
+        <h3 class="dark-grey">更新調查表</h3>
+        <p>請點擊更新調查表以完成檢誤：</p>
+        <button type="button" class="btn btn-info btn-lg btn-block" id="btnSubmit">更新調查表</button>
+    }
+    @if (ViewBag.Title == "新增農戶")
+    {
+        <h3 class="dark-grey">新增調查表</h3>
+        <p>請點擊新增調查表建立資料：</p>
+        <button type="button" class="btn btn-info btn-lg btn-block" id="btnSubmit">新增調查表</button>
+    }
+</div>
+
+<div class="jumbotron">
+    <h3 class="dark-grey">聯絡資訊</h3>
+    <p class="text-primary">
+        <span class="glyphicon glyphicon-user"></span> 鄭大偉
+    </p>
+    <p class="text-primary">
+        <span class="glyphicon glyphicon-earphone"></span> 022312-6371
+    </p>
+    <p class="text-primary">
+        <span class="glyphicon glyphicon-envelope"></span> davidcheng@mail.coa.gov.tw
+    </p>
+    <br />
+    <p class="text-primary">
+        <span class="glyphicon glyphicon-user"></span> 林楓敏
+    </p>
+    <p class="text-primary">
+        <span class="glyphicon glyphicon-earphone"></span> 022312-6351
+    </p>
+    <p class="text-primary">
+        <span class="glyphicon glyphicon-envelope"></span> mlin660909@mail.coa.gov.tw
+    </p>
+    <br />
+    <p class="text-primary">
+        <span class="glyphicon glyphicon-user"></span> 黃彥慈
+    </p>
+    <p class="text-primary">
+        <span class="glyphicon glyphicon-earphone"></span> 022312-6377
+    </p>
+    <p class="text-primary">
+        <span class="glyphicon glyphicon-envelope"></span> jellybear@mail.coa.gov.tw
+    </p>
+    <br />
+</div>

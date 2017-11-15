@@ -2,7 +2,7 @@ About survey:
 ---
 Exploring the causes of labor shortage in Taiwan
 
-About this web project: 
+About project: 
 ---
 Online survey create and edit with error examination alerts
 
